@@ -31,7 +31,7 @@ module.exports = function (options) {
              if (error) {
                 throw error;
             }
-            cb();
+            cb(null, file);
         });
 
 	});
