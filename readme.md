@@ -1,6 +1,6 @@
 # gulp-nuget-restore [![Build Status](https://travis-ci.org/tparnell8/gulp-nuget-restore.svg?branch=master)](https://travis-ci.org/tparnell8/gulp-nuget-restore)
 
-> My dazzling gulp plugin
+> This is  simple gulp plugin to restore nuget packages
 
 
 ## Install
@@ -17,9 +17,8 @@ var gulp = require('gulp');
 var nugetRestore = require('gulp-nuget-restore');
 
 gulp.task('default', function () {
-	return gulp.src('src/file.ext')
-		.pipe(nugetRestore())
-		.pipe(gulp.dest('dist'));
+	return gulp.src('MySlnFile.sln')
+		.pipe(nugetRestore());
 });
 ```
 
@@ -30,12 +29,21 @@ gulp.task('default', function () {
 
 #### options
 
-##### foo
+##### nugetPath
 
-Type: `boolean`  
-Default: `false`
+Type: `string`  
+Default: `__dir + ./nuget.exe`
 
-Lorem ipsum.
+You can provide a custom path to the nuget executable. One is bundled in the module so this is optional if you want a specific version
+
+##### monoPath
+
+Type: `string`  
+Default: `null`
+
+You can provide a path to mono if you are on ubuntu (currently untested)
+
+
 
 
 ## License
