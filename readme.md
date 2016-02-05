@@ -17,7 +17,7 @@ var gulp = require('gulp');
 var nugetRestore = require('gulp-nuget-restore');
 
 gulp.task('default', function () {
-	return gulp.src('MySlnFile.sln')
+	return gulp.src('./path/to/MySlnFile.sln')
 		.pipe(nugetRestore());
 });
 ```
