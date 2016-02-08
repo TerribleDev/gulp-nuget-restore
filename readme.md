@@ -22,6 +22,26 @@ gulp.task('default', function () {
 });
 ```
 
+Seems work well well with [gulp-msbuild](https://github.com/hoffi/gulp-msbuild)
+
+```js
+
+var gulp = require('gulp');
+var nugetRestore = require('gulp-nuget-restore');
+var msbuild = require("gulp-msbuild");
+
+gulp.task('build', function () {
+    return gulp.src('WebApplication9.sln')
+        .pipe(nugetRestore())
+        .pipe(msbuild({
+            targets: ['Clean', 'Build'],
+            toolsVersion: 14.0}
+          ));
+});
+
+
+```
+
 
 ## API
 
