@@ -13,8 +13,8 @@ module.exports = function (options) {
     if(options){
         nugetPath = options.nugetPath || nugetPath;
         monoPath = options.monoPath || monoPath;
-        if(options.nugetArguments && options.nugetArguments.length > 0){
-        cmdArgs =  cmdArgs.concat(options.nugetArguments);
+        if(options.additionalArgs && options.additionalArgs.length > 0){
+        cmdArgs =  cmdArgs.concat(options.additionalArgs);
         }
     }
      if(monoPath && monoPath.length > 0){

@@ -44,6 +44,24 @@ Default: `null`
 You can provide a path to mono if you are on ubuntu (currently untested)
 
 
+#### additionalArgs
+
+type `array`
+Default: `null`
+
+You can provide additional arguments such as -PackageDirectory
+
+```js
+
+var gulp = require('gulp');
+var nugetRestore = require('gulp-nuget-restore');
+
+gulp.task('default', function () {
+	return gulp.src('./path/to/MySlnFile.sln')
+		.pipe(nugetRestore({additionalArgs: ["-PackagesDirectory", "..\\packages"]}));
+});
+
+```
 
 
 ## License
