@@ -8,17 +8,19 @@ module.exports = function (options) {
     var nugetPath =  __dirname + "./nuget.exe";
     var monoPath  =  null;
     var targetFile = nugetPath;
-    var cmdArgs = ["restore"]
-   
+    var cmdArgs = ["restore"];
+
     if(options){
         nugetPath = options.nugetPath || nugetPath;
-        monoPath = options.monoPath || monoPath
+        monoPath = options.monoPath || monoPath;
+        if(options.nugetArguments && options.nugetArguments.length > 0){
+        cmdArgs =  cmdArgs.concat(options.nugetArguments);
+        }
     }
      if(monoPath && monoPath.length > 0){
         targetFile = monoPath;
         cmdArgs.unshift(nugetPath);
     }
-
 	return through.obj(function (file, enc, cb) {
 		if (!file || !file.path) {
 			cb(null, file);
