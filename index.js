@@ -29,8 +29,12 @@ module.exports = function (options) {
         }
         cmdArgs.push(file.path);
         return execFile(targetFile, cmdArgs, function (error, stdout, stderror) {
-            if (stdout.trim()) gutil.log(stdout);
-            if (stderror.trim()) gutil.log(stderror);
+            if (stdout.trim()) {
+              gutil.log(stdout);
+            }
+            if (stderror.trim()){
+              gutil.log(stderror);
+            }
             if (error) {
                 throw error;
             }
