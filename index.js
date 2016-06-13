@@ -11,7 +11,10 @@ module.exports = function (options) {
     var cmdArgs = ["restore"];
 
     if (options) {
-        nugetPath = options.nugetPath || nugetPath;
+        if (options.nugetPath && options.nugetPath.length > 0) {
+            nugetPath = options.nugetPath;
+            targetFile = nugetPath;
+        }
         monoPath = options.monoPath || monoPath;
         if (options.additionalArgs && options.additionalArgs.length > 0) {
             cmdArgs = cmdArgs.concat(options.additionalArgs);
