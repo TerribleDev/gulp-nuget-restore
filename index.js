@@ -11,7 +11,7 @@ module.exports = function (options) {
     var cmdArgs = ["restore"];
 
     if (options) {
-        if (options.nugetPath && options.nugetPath.length > 0) {
+        if (options.nugetPath) {
             nugetPath = options.nugetPath;
             targetFile = nugetPath;
         }
