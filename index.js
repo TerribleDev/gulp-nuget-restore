@@ -27,8 +27,8 @@ module.exports = function (options) {
             cb(null, file);
             return;
         }
-        cmdArgs.push(file.path);
-        return execFile(targetFile, cmdArgs, function (error, stdout, stderror) {
+        var localArgs = cmdArgs.concat(file.path);
+        return execFile(targetFile, localArgs, function (error, stdout, stderror) {
             if (stdout.trim()) {
               gutil.log(stdout);
             }
