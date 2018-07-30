@@ -23,7 +23,7 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "gulp-util": "^3.0.1",
+    "fancy-log": "^1.3.2",
     "through2": "^0.6.3"
   },
   "devDependencies": {
