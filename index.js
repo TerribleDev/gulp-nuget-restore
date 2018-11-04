@@ -1,5 +1,5 @@
 'use strict';
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var through = require('through2');
 var execFile = require('child_process').execFile;
 
@@ -30,10 +30,10 @@ module.exports = function (options) {
         var localArgs = cmdArgs.concat(file.path);
         return execFile(targetFile, localArgs, function (error, stdout, stderror) {
             if (stdout.trim()) {
-              gutil.log(stdout);
+              log(stdout);
             }
             if (stderror.trim()){
-              gutil.log(stderror);
+              log(stderror);
             }
             if (error) {
                 throw error;
