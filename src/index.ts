@@ -46,4 +46,4 @@ export = function nugetRestore(options: IOptions): stream.Stream {
             cb(null, file);
         });
     });
-}
+};

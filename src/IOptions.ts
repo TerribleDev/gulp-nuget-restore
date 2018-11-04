@@ -324,7 +324,4 @@ export class Options implements IOptions{
      * @memberof IOptions
      */
     public additionalArgs?: string[];
-    public yo(){
-        return "yo";
-    }
 }
