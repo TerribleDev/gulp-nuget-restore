@@ -12,6 +12,7 @@ module.exports = function (options) {
 
     if (options) {
         nugetPath = options.nugetPath || nugetPath;
+		targetFile = options.nugetPath || nugetPath;
         monoPath = options.monoPath || monoPath;
         if (options.additionalArgs && options.additionalArgs.length > 0) {
             cmdArgs = cmdArgs.concat(options.additionalArgs);
